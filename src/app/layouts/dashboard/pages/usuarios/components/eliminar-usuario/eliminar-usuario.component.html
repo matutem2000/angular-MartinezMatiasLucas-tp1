@@ -1,0 +1,15 @@
+ <h5 class="text-center mt-3 mx-3" mat-dialog-title>¿Está seguro que desea eliminar a: {{data.usuario.email}}</h5>
+<div mat-dialog-content>
+    <ul>
+        <strong>ID:</strong> {{ data.usuario.id }} <br>
+        <strong>Nombre:</strong> {{ data.usuario.nombre }} <br>
+        <strong>Apellido:</strong> {{ data.usuario.apellido }} 
+        <!-- Agrega más propiedades según la estructura de tu Usuario -->
+      </ul>
+</div>
+<div mat-dialog-actions class="mb-3 mx-3">
+  <button mat-button mat-dialog-close (click)="cerrarModal()">Cancelar</button>
+  <button mat-button mat-dialog-close cdkFocusInitial class="btn btn-danger">Eliminar</button>
+</div >
+
+ 

@@ -1,0 +1,35 @@
+<h1 tituloGrande>Creación de usuarios</h1>
+
+<form [formGroup]="usuarioForm" (ngSubmit)="onSubmit()" action="">
+    <mat-form-field >
+        <mat-label>Nombre</mat-label>
+        <input formControlName="nombre" matInput type="text" >
+      </mat-form-field>
+    
+      <mat-form-field >
+        <mat-label>Apellido</mat-label>
+        <input formControlName="apellido" matInput type="text" >
+      </mat-form-field>
+    
+      <mat-form-field >
+        <mat-label>Mail</mat-label>
+        <input formControlName="email" matInput type="email" >
+      </mat-form-field>
+    
+      <mat-form-field >
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput type="password" >
+      </mat-form-field>
+    
+      <mat-form-field>
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="rol">
+            <mat-option value="Administrador" va>Administrador</mat-option>
+            <mat-option value="Profesor">Profesor</mat-option>
+            <mat-option value="Estudiante">Estudiante</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-flat-button color="primary">Guardar</button>
+</form>
+
+<!-- <pre>{{usuarioForm.value | json}}</pre> -->

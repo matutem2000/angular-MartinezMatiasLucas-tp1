@@ -1,0 +1,29 @@
+<h5 class="text-center mt-3 mx-3" mat-dialog-title>Modificar a: {{data.usuario.email}}</h5>
+
+<form class="m-4 " [formGroup]="usuarioFormModif" (ngSubmit)="onSubmit()" action="">
+    <mat-form-field >
+        <mat-label>Nombre</mat-label>
+        <input formControlName="nombre" matInput type="text" >
+      </mat-form-field>
+    <br>
+      <mat-form-field >
+        <mat-label>Apellido</mat-label>
+        <input formControlName="apellido" matInput type="text" >
+      </mat-form-field>
+    <br>
+      <mat-form-field >
+        <mat-label>Mail</mat-label>
+        <input formControlName="email" matInput type="email" >
+      </mat-form-field>
+    <br>
+     <mat-form-field>
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="rol">
+            <mat-option value="Administrador" va>Administrador</mat-option>
+            <mat-option value="Profesor">Profesor</mat-option>
+            <mat-option value="Estudiante">Estudiante</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button  mat-flat-button color="primary">Guardar</button>
+</form>

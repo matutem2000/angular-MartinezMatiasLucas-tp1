@@ -1,0 +1,45 @@
+<div class="mb-3">
+  <app-user-form-crear (usuarioCreado)="onUserSubmitted($event)"></app-user-form-crear>
+</div>
+
+<h1 tituloGrande>Listado usuarios</h1>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th class="text-center" mat-header-cell *matHeaderCellDef> ID. </th>
+            <td class="text-center" mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="apellidoYnombre">
+            <th class="text-center" mat-header-cell *matHeaderCellDef> Apellido y Nombre</th>
+            <td class="text-center" mat-cell *matCellDef="let element"> {{element.apellido}} {{element.nombre}} </td>
+          </ng-container>
+        
+          
+          <ng-container matColumnDef="email">
+            <th class="text-center" mat-header-cell *matHeaderCellDef> Email </th>
+            <td class="text-center" mat-cell *matCellDef="let element"> {{element.email}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="rol">
+            <th class="text-center" mat-header-cell *matHeaderCellDef> Rol </th>
+            <td class="text-center" mat-cell *matCellDef="let element"> {{element.rol}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="acciones">
+            <th class="text-center" mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td class="text-center" mat-cell *matCellDef="let element">
+              <button mat-icon-button (click)="modificarUsuario(element.id)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="eliminarUsuario(element.id)">
+                <mat-icon >delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+  
+  
