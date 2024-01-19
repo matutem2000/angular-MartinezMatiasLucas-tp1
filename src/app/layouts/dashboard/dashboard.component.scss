@@ -1,3 +1,15 @@
 .dashboard-container{
     height: 100vh;
 }
+.menu-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+  }
+
+  .menu-btn:hover {
+    background-color: #343a40; /* Fondo oscuro al pasar el ratón */
+  color: #fff; /* Texto en blanco al pasar el ratón */
+  }
