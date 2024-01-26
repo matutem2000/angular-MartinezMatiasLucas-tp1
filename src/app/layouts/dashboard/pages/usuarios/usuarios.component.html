@@ -12,7 +12,7 @@
         
           <ng-container matColumnDef="apellidoYnombre">
             <th class="text-center" mat-header-cell *matHeaderCellDef> Apellido y Nombre</th>
-            <td class="text-center" mat-cell *matCellDef="let element"> {{element.apellido}} {{element.nombre}} </td>
+            <td class="text-center" mat-cell *matCellDef="let element"> {{element.apellido | touppercase}} {{element.nombre}} </td>
           </ng-container>
         
           
@@ -29,10 +29,10 @@
           <ng-container matColumnDef="acciones">
             <th class="text-center" mat-header-cell *matHeaderCellDef> Acciones </th>
             <td class="text-center" mat-cell *matCellDef="let element">
-              <button mat-icon-button (click)="modificarUsuario(element.id)">
+              <button mat-icon-button (click)="modificarUsuario(element)">
                 <mat-icon>edit</mat-icon>
               </button>
-              <button mat-icon-button (click)="eliminarUsuario(element.id)">
+              <button mat-icon-button (click)="eliminarUsuario(element)">
                 <mat-icon >delete</mat-icon>
               </button>
             </td>

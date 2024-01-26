@@ -3,12 +3,15 @@ import { Usuario } from './models/usuarios.interface';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { ModificarUsuarioComponent } from './components/modificar-usuario/modificar-usuario.component';
 import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
+import { TouppercasePipe } from './pipes/touppercase.pipe';
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.scss'
 })
+
+
 export class UsuariosComponent {
 
   constructor(public dialog: MatDialog){}
@@ -67,19 +70,37 @@ export class UsuariosComponent {
   };
 
   //Modificar usuario
-  modificarUsuario(id: number): Usuario | undefined {
-    const usuarioAModificar=this.dataSource.find(usuario => usuario.id === id);
-   this.abrirModalModificar(usuarioAModificar);
-    return usuarioAModificar;
-  };
+      modificarUsuario(usuario: Usuario): void {
+      const dialogRef = this.dialog.open(ModificarUsuarioComponent, {
+        data: { usuario },
+      });
   
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+           this.dataSource = this.dataSource.map((u) =>
+            u.id === usuario.id ? { ...u, ...result } : u
+          );
+        }
+      });
+    }
+  
+    
+    // Eliminar usuario
+    eliminarUsuario(usuario: Usuario): void {
+      const dialogRef = this.dialog.open(EliminarUsuarioComponent, {
+        data: { usuario },
+      });
+    
+      dialogRef.afterClosed().subscribe((eliminado: boolean) => {
+        if (eliminado) {
+          // Eliminar el usuario del dataSource
+          this.dataSource = this.dataSource.filter(u => u.id !== usuario.id);
+        }
+      });
+    }
 
-  //Eliminar usuario
-  eliminarUsuario(id: number): Usuario | undefined {
-    const usuarioAEliminar=this.dataSource.find(usuario => usuario.id === id);
-   this.abrirModalEliminar(usuarioAEliminar);
-    return usuarioAEliminar;
-  };
+    
+
 
    abrirModalModificar(usuario: Usuario | undefined){
     const dialogRef= this.dialog.open(ModificarUsuarioComponent, {

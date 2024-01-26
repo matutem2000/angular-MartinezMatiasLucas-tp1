@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TituloGrande } from '../../../../directivas/titulo.directiva';
 import { ModificarUsuarioComponent } from './components/modificar-usuario/modificar-usuario.component';
 import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
-
+import { TouppercasePipe } from './pipes/touppercase.pipe';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar
     UserFormCrearComponent,
     TituloGrande,
     ModificarUsuarioComponent,
-    EliminarUsuarioComponent
+    EliminarUsuarioComponent,
+    TouppercasePipe
   ],
   imports: [
     CommonModule,

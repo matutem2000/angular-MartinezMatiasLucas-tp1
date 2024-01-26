@@ -49,17 +49,8 @@ export class ModificarUsuarioComponent {
   
     onSubmit(): void{
       
-        /* this.usuarioCreado.emit(this.usuarioFormModif.value);
-        this.usuarioFormModif.reset({
-          markAsPristine: true,
-          markAsUntouched: true
-      });
-      this.usuarioFormModif.markAsUntouched(); */
-
-      const datosModificados = this.usuarioFormModif.value;
-      const usuarioActualizado: Usuario = { ...this.data.usuario, ...datosModificados };
-
-      console.log(datosModificados);
+      this.dialogRef.close(this.usuarioFormModif.value);
+        
     }
 
 // 
