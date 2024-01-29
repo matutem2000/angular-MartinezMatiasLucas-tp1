@@ -52,6 +52,7 @@ confirmarEliminar(): void {
 
 
   cerrarModal(): void {
+    //console.log('método de cerrar modal de eliminar-usuario-component');
     this.dialogRef.close();
   }
 }

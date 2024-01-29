@@ -86,7 +86,7 @@ export class UsuariosComponent {
   
     
     // Eliminar usuario
-    eliminarUsuario(usuario: Usuario): void {
+     eliminarUsuario(usuario: Usuario): void {
       const dialogRef = this.dialog.open(EliminarUsuarioComponent, {
         data: { usuario },
       });
@@ -97,10 +97,10 @@ export class UsuariosComponent {
           this.dataSource = this.dataSource.filter(u => u.id !== usuario.id);
         }
       });
-    }
-
+    } 
+   
     
-
+    
 
    abrirModalModificar(usuario: Usuario | undefined){
     const dialogRef= this.dialog.open(ModificarUsuarioComponent, {
