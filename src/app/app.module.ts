@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardModule } from './layouts/dashboard/dashboard.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AuthModule } from './layouts/auth/auth.module';
+import { SharedComponent } from './shared/components/shared.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SharedComponent,
    
     
     
@@ -19,7 +22,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppRoutingModule,
     BrowserAnimationsModule,
     DashboardModule,
-    MatDialogModule
+    MatDialogModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

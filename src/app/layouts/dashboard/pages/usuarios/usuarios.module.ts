@@ -15,6 +15,7 @@ import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar
 import { TouppercasePipe } from './pipes/touppercase.pipe';
 
 
+
 @NgModule({
   declarations: [
     UsuariosComponent,
@@ -22,7 +23,9 @@ import { TouppercasePipe } from './pipes/touppercase.pipe';
     TituloGrande,
     ModificarUsuarioComponent,
     EliminarUsuarioComponent,
-    TouppercasePipe
+    TouppercasePipe,
+   
+    
   ],
   imports: [
     CommonModule,

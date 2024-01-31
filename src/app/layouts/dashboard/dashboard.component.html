@@ -1,16 +1,9 @@
 <mat-drawer-container class="dashboard-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
      <h5>Menú de navegación</h5>
-      <button class="btn menu-btn">Estudiantes</button><br>
-      <button class="btn menu-btn">Profesores</button><br>
-      <button class="btn menu-btn">Usuarios</button>
-      
-     <!-- @if (showFiller) {
-        <p>Lorem, ipsum dolor sit amet consectetur.</p>
-      }
-       <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button> -->
+      <button class="btn menu-btn" [routerLink]="'/estudiantes'">Estudiantes</button><br>
+      <button class="btn menu-btn" [routerLink]="'/profesores'">Profesores</button><br>
+      <button class="btn menu-btn" [routerLink]="'/usuarios'">Usuarios</button>
     </mat-drawer>
   
     <div class="example-sidenav-content">
@@ -26,7 +19,7 @@
       <!-- fin toolbar -->
       <div >
         <div class="p-3">
-          <app-usuarios></app-usuarios>
+          <router-outlet></router-outlet>
         </div>
       </div>
     </div>

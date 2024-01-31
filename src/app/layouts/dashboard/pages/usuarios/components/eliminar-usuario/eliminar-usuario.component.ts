@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class EliminarUsuarioComponent {
 
   usuarioFormEliminar: FormGroup;
+  usuarioEliminado = new EventEmitter<boolean>();  // Emitir evento cuando se elimina el usuario
 
   constructor(
     public dialogRef: MatDialogRef<EliminarUsuarioComponent>,

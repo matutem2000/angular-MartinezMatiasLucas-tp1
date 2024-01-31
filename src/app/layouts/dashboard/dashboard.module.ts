@@ -6,14 +6,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { UsuariosModule } from './pages/usuarios/usuarios.module';
-
+import { RouterModule } from '@angular/router';
 
 
 
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
+
   ],
   imports: [
     CommonModule,
@@ -22,6 +23,7 @@ import { UsuariosModule } from './pages/usuarios/usuarios.module';
     MatToolbarModule,
     MatIconModule,
     UsuariosModule,
+    RouterModule
   ],
   exports: [
     DashboardComponent,
