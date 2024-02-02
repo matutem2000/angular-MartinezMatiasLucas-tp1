@@ -13,6 +13,8 @@ import { TituloGrande } from '../../../../directivas/titulo.directiva';
 import { ModificarUsuarioComponent } from './components/modificar-usuario/modificar-usuario.component';
 import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
 import { TouppercasePipe } from './pipes/touppercase.pipe';
+import { UserDataService } from '../../../../core/services/user-data.service';
+import { LoadingService } from '../../../../core/services/loading.service';
 
 
 
@@ -40,5 +42,6 @@ import { TouppercasePipe } from './pipes/touppercase.pipe';
   exports: [
     UsuariosComponent
   ],
+  providers: [UserDataService, LoadingService]
 })
 export class UsuariosModule { }

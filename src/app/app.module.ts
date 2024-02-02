@@ -8,6 +8,7 @@ import { DashboardModule } from './layouts/dashboard/dashboard.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AuthModule } from './layouts/auth/auth.module';
 import { SharedComponent } from './shared/components/shared.component';
+import { LoadingService } from './core/services/loading.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { SharedComponent } from './shared/components/shared.component';
     MatDialogModule,
     AuthModule
   ],
-  providers: [],
+  providers: [LoadingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
